@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 9b4007f1233a9b74fa9be42583fafba6
+timeCreated: 1441209700
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - fireballAMaterial: {instanceID: 0}
+  - fireballBMaterial: {instanceID: 0}
+  - smokeAMaterial: {fileID: 2100000, guid: 2d7e594d401a7524e82695dcd66c2bc0, type: 2}
+  - smokeBMaterial: {fileID: 2100000, guid: 36aa334bd0865ca459c9b3dfbbaf7198, type: 2}
+  - shockwaveMaterial: {instanceID: 0}
+  - sparksMaterial: {instanceID: 0}
+  - glowMaterial: {instanceID: 0}
+  - heatwaveMaterial: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
