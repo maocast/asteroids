@@ -18,22 +18,38 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
-	
+
+
+ 
+
 	void OnCollisionEnter (Collision collision) {
 		//Create explosion when object collides
-		GameObject exp = (GameObject)GameObject.Instantiate (explosion, transform.position, transform.rotation);
-		
+
+		// this ain't working as expected 
+		// bullets push each other around.
+
+		if (collision.gameObject.CompareTag("Bullet")) {
+			Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+		}
+
 		//Collide against asteroid
 		if(collision.gameObject.CompareTag("Asteroid"))
 		{
+			GameObject exp = (GameObject)GameObject.Instantiate (explosion, transform.position, transform.rotation);
+
 			Asteroid asteroid = (Asteroid)collision.gameObject.GetComponent ("Asteroid");
+
 			asteroid.applyDamage(damage);
+
 			//Attach explosion to asteroid
 			exp.transform.parent = asteroid.transform;
 		}
 		
 		//Eliminate bullet
-		Destroy(gameObject);
+		if (!collision.gameObject.CompareTag("Bullet")) {
+		  Destroy(gameObject);
+		}
+
 	}
 	
 	void kill () {
